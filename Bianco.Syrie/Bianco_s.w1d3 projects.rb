@@ -1,10 +1,13 @@
 #warm up
 
 #1
-def rec_range (r)
-
+def range (r_start, r_end)
+  return [r_start] if r_end < r_start
+  range(r_start.succ, r_end).unshift(r_start.succ)
 end
-
+##I tried to get this to work for letters to by using the .succ method, figured
+#shouldn't waste too much time debugging the "warm-up"
+ 
 #2
 def rec_sum (arr)
   return arr.first if arr.length <= 1
