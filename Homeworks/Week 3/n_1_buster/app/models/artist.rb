@@ -1,7 +1,14 @@
 class Artist < ActiveRecord::Base
   has_many(
     :albums, class_name: "Album"
-  )
+    )
+
+  has_many(
+    :tracks,
+    through: :albums,
+    source: :tracks
+    )
+
 
   def n_plus_one_tracks
     albums = self.albums
@@ -14,6 +21,6 @@ class Artist < ActiveRecord::Base
   end
 
   def better_tracks_query
-    # TODO: your code here
+    self.tracks.count
   end
 end
