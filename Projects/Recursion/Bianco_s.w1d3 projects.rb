@@ -7,7 +7,7 @@ def range (r_start, r_end)
 end
 ##I tried to get this to work for letters to by using the .succ method, figured
 #shouldn't waste too much time debugging the "warm-up"
- 
+
 #2
 def rec_sum (arr)
   return arr.first if arr.length <= 1
@@ -47,6 +47,7 @@ def deep_dup(arr)
   arr.each do |el|
     next unless el.is_a?(Array)
     deep_dup(el)
+  end
 end
 
 # Fibonacci
@@ -83,14 +84,17 @@ end
 
 def permutations(arr)
   return [arr] if arr.length == 1
-  perms = permutations(arr.take(arr.length-1))
+  perms = permutations(arr[0...-1])
+  p perms
   all_permutes = []
   perms.each do | perm |
     perm.each_index do | i |
-      all_permutes << perm.insert(i,arr.last)
+      all_permutes << perm.insert(i, arr.last)
     end
   end
 
   all_permutes
 end
-#its looping! Halp!
+
+
+permutations((1..3).to_a)
