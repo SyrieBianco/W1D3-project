@@ -34,7 +34,6 @@ class SQLObject
 
   def self.table_name=(table_name)
     @table_name = table_name
-
   end
 
   def self.table_name
