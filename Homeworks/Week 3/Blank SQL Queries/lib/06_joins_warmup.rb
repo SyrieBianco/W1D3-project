@@ -1,3 +1,42 @@
+#
+# == Schema Information
+#
+# Table name: albums
+#
+#  asin        :string       not null, primary key
+#  title       :string
+#  artist      :string
+#  price       :float
+#  rdate       :date
+#  label       :string
+#  rank        :integer
+#
+# Table name: styles
+#
+# album        :string       not null
+# style        :string       not null
+#
+# Table name: tracks
+# album        :string       not null
+# disk         :integer      not null
+# posn         :integer      not null
+# song         :string
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # == Schema Information
 #
 # Table name: actors
