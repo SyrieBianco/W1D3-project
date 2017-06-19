@@ -1,4 +1,8 @@
 class WatchList < ActiveRecord::Base
+
+  #  has a user (FAILED - 19)
+  #  has a watch list item (FAILED - 20)
+
   belongs_to :user,
     primary_key: :id,
     foreign_key: :user_id,
@@ -8,8 +12,9 @@ class WatchList < ActiveRecord::Base
     primary_key: :id,
     foreign_key: :watch_list_id,
     class_name: :WatchListItem
+  #
+  # has_many :,
+  #   through: :,
+  #   source: :,
 
-  # has_many: ,
-  #   through: :
-  #   source: :
 end

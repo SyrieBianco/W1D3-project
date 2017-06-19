@@ -1,10 +1,6 @@
 class Board < ActiveRecord::Base
 
-
-
- # has a member (FAILED - 3)
- # has a single exchange (FAILED - 4)
- #
+  # has a single exchange (FAILED - 4)
 
   belongs_to :company,
     primary_key: :id,
@@ -23,4 +19,5 @@ class Board < ActiveRecord::Base
   has_one :exchange,
     through: :company,
     source: :exchange
+
 end

@@ -1,9 +1,8 @@
 class Company < ActiveRecord::Base
 
- # has a price (FAILED - 1)
- # has a watch list (FAILED - 2)
- # has a watcher (FAILED - 3)
- # has a board (FAILED - 4)
+  #  has a watch list (FAILED - 7)
+  #  has a watcher (FAILED - 8)
+  #  has a board (FAILED - 9)
 
 
 
@@ -13,26 +12,26 @@ class Company < ActiveRecord::Base
     class_name: :Exchange
 
   has_many :prices,
-    primary_key: :id ,
-    foreign_key: :company_id ,
-    class_name: :Price
-
-  has_one :board,
     primary_key: :id,
     foreign_key: :company_id,
-    class_name: :Board
+    class_name: :Price
 
-  has_many :watchlistitems,
-    primary_key: :id ,
-    foreign_key: :company_id ,
+  has_many :watch_list_items,
+    primary_key: :id,
+    foreign_key: :company_id,
     class_name: :WatchListItem
 
   has_many :watch_lists,
-    through: :watchlistitems,
+    through: :watch_list_items,
     source: :watch_list
 
   has_many :watchers,
     through: :watch_lists,
     source: :user
+
+  has_one :board,
+    primary_key: :id,
+    foreign_key: :company_id,
+    class_name: :Board
 
 end

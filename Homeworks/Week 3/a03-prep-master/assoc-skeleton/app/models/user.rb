@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
-  # has a watch list (FAILED - 2)
-  # has watch list items (FAILED - 3)
-  # can see watched tickers (FAILED - 4)
+
+  # has a watch list (FAILED - 14)
+  # has watch list items (FAILED - 15)
+  # can see watched tickers (FAILED - 16)
 
   has_many :watch_lists,
     primary_key: :id,
