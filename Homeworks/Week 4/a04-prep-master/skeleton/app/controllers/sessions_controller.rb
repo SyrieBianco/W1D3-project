@@ -13,14 +13,15 @@ class SessionsController < ApplicationController
       flash.now[:errors] = ["invalid username or password"]
       render :new
     else
-      login!(user)
+      login!(@user)
       redirect_to links_url
     end
   end
 
   def destroy
-    current_user.try.reset_session_token!
+    current_user.reset_session_token!
     session[:session_token] = nil
+    render :new
   end
 
 
