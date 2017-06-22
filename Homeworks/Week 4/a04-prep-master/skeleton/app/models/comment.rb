@@ -1,5 +1,6 @@
 class Comment < ActiveRecord::Base
   validates :body, :user, :link, presence: true
+  validates :user_id, :link_id, presence: true
 
   belongs_to :link,
     primary_key: :id,

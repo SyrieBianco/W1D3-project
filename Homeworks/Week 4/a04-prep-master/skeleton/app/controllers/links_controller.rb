@@ -34,4 +34,57 @@
 #       should not allow users to update another users links (FAILED - 16)
 
 class LinksController < ApplicationController
+  before_action :require_logged_in
+
+  def index
+    render :index
+  end
+
+  def new
+    render :new
+  end
+
+  def create
+    @link = Link.new(link_params)
+    @link.user_id = current_user.id
+
+    if @link.save
+      redirect_to link_url(@link)
+    else
+      flash[:errors] = @link.errors.full_messages
+      render :new
+    end
+  end
+
+  def show
+    @link = Link.find_by(id: params[:id])
+    render :show
+  end
+
+  def update
+    @link = Link.find_by(id: params[:id])
+
+    unless @link.user == current_user
+      flash.now[:errors] = ["You can only edit your own posts!"]
+      render :show
+    else
+      @link.update_attributes(link_params)
+      render :show
+    end
+  end
+
+  def edit
+    render :edit
+  end
+
+  def destroy
+
+  end
+
+  private
+
+  def link_params
+    params.require(:link).permit(:user, :title, :url)
+  end
+
 end

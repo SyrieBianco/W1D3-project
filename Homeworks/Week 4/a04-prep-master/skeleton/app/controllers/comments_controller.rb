@@ -14,7 +14,7 @@
 #       removes the comment and redirects back to the link (FAILED - 5)
 
 class CommentsController < ApplicationController
-  before_action :require_logged_in
+  before_action :require_logged_in, only: [:create, :destroy]
 
   def create
     @comment = Comment.new(comment_params)
@@ -23,12 +23,12 @@ class CommentsController < ApplicationController
       redirect_to link_url(@comment.link_id)
     else
       flash.now[:errors] = @comment.errors.full_messages
-      redirect_to link_url(params[comment][link_id])
+      redirect_to link_url(params[:comment][link_id])
     end
   end
 
   def destroy
-
+    Comment.find_by(params[:comment][id])
   end
 
   private
