@@ -23,12 +23,15 @@ class CommentsController < ApplicationController
       redirect_to link_url(@comment.link_id)
     else
       flash.now[:errors] = @comment.errors.full_messages
-      redirect_to link_url(params[:comment][link_id])
+      redirect_to link_url(@comment.link_id)
     end
   end
 
   def destroy
-    Comment.find_by(params[:comment][id])
+    link = Link.find_by(params[:link_id])
+    comment = Comment.find_by(link.id)
+    comment.destroy!
+    redirect_to link_url(link)
   end
 
   private
