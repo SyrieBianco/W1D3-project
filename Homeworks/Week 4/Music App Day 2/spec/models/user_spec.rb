@@ -10,16 +10,17 @@ require 'rails_helper'
 
 
 RSpec.describe User, type: :model do
-  describe "User Model" do
-    it {should validate_presence_of(:email)}
-    it {should validate_presence_of(:password_digest)}
-    it {should validate_length_of(:password).is_at_least(6)}
 
-    subject(:user) {User.new(
-      email: "syriebianco@gmail.com",
-      password_digest: BCrypt::Password.create('password'),
-      session_token: SecureRandom.base64(16)
-      )}
+  subject(:user) {User.new(
+    email: "syriebianco@gmail.com",
+    password_digest: BCrypt::Password.create('password'),
+    session_token: SecureRandom.base64(16)
+    )}
+
+  describe "Validations" do
+    it { should validate_presence_of(:email) }
+    it { should validate_presence_of(:password_digest) }
+    it { should validate_length_of(:password).is_at_least(6) }
 
     describe "is_password? method" do
       it "should compare the password_digest to the argument password"
