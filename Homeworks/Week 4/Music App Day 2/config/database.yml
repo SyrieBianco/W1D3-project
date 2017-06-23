@@ -1,3 +1,5 @@
+
+
 development:
   adapter: postgresql
   database: music_db_dev
