@@ -16,19 +16,19 @@ class User < ActiveRecord::Base
   end
 
   def is_password?(password)
-    BCrypt::password.new(self.password_digest).is_password?(password)
+    BCrypt::Password.new(self.password_digest).is_password?(password)
   end
 
   def self.find_by_credentials(username, password)
-    user = find_by_username(username)
+    user = User.find_by_username(username)
     return nil if user.nil?
     user.is_password?(password) ? user : nil
   end
 
   def reset_session_token!
-    token = SecureRandom::urlsafe_base64
-    self.session_token = token
-    token
+    self.session_token = SecureRandom::urlsafe_base64
+    self.save!
+    self.session_token
   end
 
   def ensure_session_token
