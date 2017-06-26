@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170626131142) do
+ActiveRecord::Schema.define(version: 20170626132655) do
 
   create_table "cats", force: :cascade do |t|
     t.string   "name",       null: false
@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 20170626131142) do
   end
 
   add_index "toys", ["name", "toyable_id", "toyable_type"], name: "index_toys_on_name_and_toyable_id_and_toyable_type", unique: true
-  add_index "toys", ["name"], name: "index_toys_on_name", unique: true
   add_index "toys", ["toyable_type", "toyable_id"], name: "index_toys_on_toyable_type_and_toyable_id"
 
 end
