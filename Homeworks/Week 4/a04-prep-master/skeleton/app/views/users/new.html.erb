@@ -1,1 +1,83 @@
 <h1>Sign Up!</h1>
+
+<form action="<%= users_url %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label> Username
+  <input type="text" name="user[username]">
+  </label>
+
+  <label>Password:
+  <input type="password" name="user[password]">
+  </label>
+
+  <input type="submit" value="Sign Up!">
+
+</form>
+
+
+
+
+
+<!-- Sign up
+  has a user sign up page
+  takes a username and password (FAILED - 1)
+  redirects to links index and displays user's username on success (FAILED - 2)
+
+Sign out
+  has a sign out button (FAILED - 3)
+  after logout, user is redirected to login form (FAILED - 4)
+
+Sign in
+  has a sign in page
+  takes a username and password (FAILED - 5)
+  returns to sign in on failure (FAILED - 6)
+  takes a user to links index on success (FAILED - 7)
+
+Failures:
+
+  1) Sign up takes a username and password
+     Failure/Error: expect(page).to have_content "Username"
+       expected to find text "Username" in "Sign Up!"
+     # ./spec/features/auth_spec.rb:13:in `block (2 levels) in <top (required)>'
+
+  2) Sign up redirects to links index and displays user's username on success
+     Failure/Error: sign_up_as_ginger_baker
+     Capybara::ElementNotFound:
+       Unable to find field "Username"
+     # ./spec/spec_helper.rb:53:in `sign_up'
+     # ./spec/spec_helper.rb:59:in `sign_up_as_ginger_baker'
+     # ./spec/features/auth_spec.rb:18:in `block (2 levels) in <top (required)>'
+
+  3) Sign out has a sign out button
+     Failure/Error: sign_up_as_ginger_baker
+     Capybara::ElementNotFound:
+       Unable to find field "Username"
+     # ./spec/spec_helper.rb:53:in `sign_up'
+     # ./spec/spec_helper.rb:59:in `sign_up_as_ginger_baker'
+     # ./spec/features/auth_spec.rb:27:in `block (2 levels) in <top (required)>'
+
+  4) Sign out after logout, user is redirected to login form
+     Failure/Error: sign_up_as_ginger_baker
+     Capybara::ElementNotFound:
+       Unable to find field "Username"
+     # ./spec/spec_helper.rb:53:in `sign_up'
+     # ./spec/spec_helper.rb:59:in `sign_up_as_ginger_baker'
+     # ./spec/features/auth_spec.rb:32:in `block (2 levels) in <top (required)>'
+
+  5) Sign in takes a username and password
+     Failure/Error: expect(page).to have_content "Username"
+       expected to find text "Username" in "Sign In!"
+     # ./spec/features/auth_spec.rb:51:in `block (2 levels) in <top (required)>'
+
+  6) Sign in returns to sign in on failure
+     Failure/Error: fill_in "Username", with: 'ginger_baker'
+     Capybara::ElementNotFound:
+       Unable to find field "Username"
+     # ./spec/features/auth_spec.rb:57:in `block (2 levels) in <top (required)>'
+
+  7) Sign in takes a user to links index on success
+     Failure/Error: sign_in('jack_bruce')
+     Capybara::ElementNotFound:
+       Unable to find field "Username"
+     # ./spec/spec_helper.rb:64:in `sign_in'
+     # ./spec/features/auth_spec.rb:68:in `block (2 levels) in <top (required)>' -->

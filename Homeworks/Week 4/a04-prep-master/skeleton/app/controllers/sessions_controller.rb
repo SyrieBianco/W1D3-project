@@ -29,7 +29,7 @@ class SessionsController < ApplicationController
 
   def destroy
     logout!
-    render :new
+    redirect_to new_session_url
   end
 
 end
