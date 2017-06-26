@@ -8,7 +8,7 @@ private
   end
 
   def logged_in?
-    ! current_user.session_token.nil?
+    !current_user.nil?
   end
 
   def login(user)
