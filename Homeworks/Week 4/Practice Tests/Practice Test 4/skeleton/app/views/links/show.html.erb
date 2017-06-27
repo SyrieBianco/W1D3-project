@@ -4,3 +4,24 @@ url : <h3><%= @link.url %></h3>
 
 <%= link_to "Links", links_url %>
 <%= link_to "Edit Link", edit_link_url(@link) %>
+
+Comments:
+
+<ul>
+<% @link.comments.each do |comment| %>
+ <li><%= comment.body %> | <%= button_to "Remove Comment", comment_url(comment), method: :delete %></li>
+<% end  %>
+</ul>
+
+
+Add Comment
+<form class="" action="<%= comments_url %>" method="post">
+  <input type="hidden" name="comment[link_id]" value="<%= params[:id] %>">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <label>Comment
+    <textarea name="comment[body]" rows="8" cols="80"></textarea>
+  </label>
+
+  <input type="submit" name="" value="Add Comment">
+</form>
