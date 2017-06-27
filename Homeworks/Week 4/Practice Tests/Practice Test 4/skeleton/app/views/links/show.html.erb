@@ -1,2 +1,6 @@
-<h1>Links#show</h1>
-<p>Find me in app/views/links/show.html.erb</p>
+<h1><%= @link.title %></h1>
+by: <h2><%= @link.user.username %></h2>
+url : <h3><%= @link.url %></h3>
+
+<%= link_to "Links", links_url %>
+<%= link_to "Edit Link", edit_link_url(@link) %>
