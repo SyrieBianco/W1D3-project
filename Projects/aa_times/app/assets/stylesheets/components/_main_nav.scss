@@ -1,34 +1,43 @@
 .main-nav {
-
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 0 auto;
+  border-bottom: 1px solid #e2e2e2;
 }
 
 .left-nav > ul,
 .right-nav > ul {
-
+  display: flex;
+  align-items: center;
+  // flex: auto;
 }
 
 .left-nav > ul > li {
-
+  margin: 5px;
+  font-weight: 700;
+  padding: 5px;
+  border-radius: 3px;
 }
 
 .right-nav > ul > li {
-
+  margin: 2px;
 }
 
 .right-nav > ul > li:last-of-type {
-
+  // padding: 2px;
 }
 
 .left-nav > ul > li:hover,
 .right-nav > ul > li:last-of-type:hover {
-
+  background-color: #f7f7f5
 }
 
 .left-nav span {
-
+  text-transform: uppercase;
 }
 
 
 .right-nav i {
-
+  font-size: 20px;
 }
