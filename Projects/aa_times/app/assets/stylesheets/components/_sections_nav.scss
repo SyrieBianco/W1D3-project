@@ -1,0 +1,34 @@
+.sections-nav {
+	display: flex;
+	// flex-direction: column;
+	align-items: center;
+  justify-content: space-around;
+	border-bottom: 1px solid $light-gray;
+	position: relative;
+
+}
+
+.sections-links {
+	display: flex;
+	font-family: $sans-serif;
+	align-items: center;
+	font-size: 11px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.sections-nav a {
+	margin-right: 20px;
+}
+
+.sections-nav a:hover, {
+	background-color: $light-gray;
+}
+
+.all {
+  text-transform: uppercase;
+}
+
+.all:hover {
+	text-decoration: underline;
+}
