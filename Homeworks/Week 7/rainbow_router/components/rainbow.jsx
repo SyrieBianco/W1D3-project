@@ -18,11 +18,14 @@ class Rainbow extends React.Component {
         {/* Your links should go here */}
 
         <div id="rainbow">
-          {/* Your routes should go here */}
+          <Route path="/red" component={Red} />
+          <Route path="/green" component={Green} />
+          <Route path="/violet" component={Violet} />
+          <Route path="/blue" component={Blue} />
         </div>
       </div>
     );
   }
-};
+}
 
 export default Rainbow;

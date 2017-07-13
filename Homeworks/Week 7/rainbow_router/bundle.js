@@ -12114,15 +12114,20 @@ var Rainbow = function (_React$Component) {
           null,
           'Rainbow Router!'
         ),
-        _react2.default.createElement('div', { id: 'rainbow' })
+        _react2.default.createElement(
+          'div',
+          { id: 'rainbow' },
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/red', component: _red2.default }),
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/green', component: _green2.default }),
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/violet', component: _violet2.default }),
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/blue', component: _blue2.default })
+        )
       );
     }
   }]);
 
   return Rainbow;
 }(_react2.default.Component);
-
-;
 
 exports.default = Rainbow;
 
@@ -12182,15 +12187,14 @@ var Blue = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement('h2', { className: 'blue' })
+        _react2.default.createElement('h2', { className: 'blue' }),
+        _react2.default.createElement(_reactRouterDom.Route, { path: '/blue/indigo', component: _indigo2.default })
       );
     }
   }]);
 
   return Blue;
 }(_react2.default.Component);
-
-;
 
 exports.default = Blue;
 
@@ -12325,15 +12329,15 @@ var Red = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement('h2', { className: 'red' })
+        _react2.default.createElement('h2', { className: 'red' }),
+        _react2.default.createElement(_reactRouterDom.Route, { path: '/red/yellow', component: _yellow2.default }),
+        _react2.default.createElement(_reactRouterDom.Route, { path: '/red/orange', component: _orange2.default })
       );
     }
   }]);
 
   return Red;
 }(_react2.default.Component);
-
-;
 
 exports.default = Red;
 
