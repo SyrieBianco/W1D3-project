@@ -8,9 +8,9 @@ class Red extends React.Component {
     return(
       <div>
         <h2 className="red"></h2>
-        <Link to="/red">Red only</Link>
-        <Link to="/red/yellow">Yellow</Link>
-        <Link to="/red/orange">Orange</Link>
+        <NavLink exact to="/red">Red only</NavLink>
+        <NavLink to="/red/yellow">Yellow</NavLink>
+        <NavLink to="/red/orange">Orange</NavLink>
 
 
         <Route path="/red/yellow" component={Yellow} />
