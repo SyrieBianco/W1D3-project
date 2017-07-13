@@ -12115,6 +12115,26 @@ var Rainbow = function (_React$Component) {
           'Rainbow Router!'
         ),
         _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: '/red' },
+          'Red'
+        ),
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: '/green' },
+          'Green'
+        ),
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: '/blue' },
+          'Blue'
+        ),
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: '/violet' },
+          'Violet'
+        ),
+        _react2.default.createElement(
           'div',
           { id: 'rainbow' },
           _react2.default.createElement(_reactRouterDom.Route, { path: '/red', component: _red2.default }),
@@ -12188,6 +12208,16 @@ var Blue = function (_React$Component) {
         'div',
         null,
         _react2.default.createElement('h2', { className: 'blue' }),
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: '/blue' },
+          'Blue only'
+        ),
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: '/blue/indigo' },
+          'Indigo'
+        ),
         _react2.default.createElement(_reactRouterDom.Route, { path: '/blue/indigo', component: _indigo2.default })
       );
     }
@@ -12330,6 +12360,21 @@ var Red = function (_React$Component) {
         'div',
         null,
         _react2.default.createElement('h2', { className: 'red' }),
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: '/red' },
+          'Red only'
+        ),
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: '/red/yellow' },
+          'Yellow'
+        ),
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: '/red/orange' },
+          'Orange'
+        ),
         _react2.default.createElement(_reactRouterDom.Route, { path: '/red/yellow', component: _yellow2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { path: '/red/orange', component: _orange2.default })
       );
